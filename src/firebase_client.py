@@ -8,7 +8,7 @@ def initialize_firebase():
     if env:
         cred_file = Path(env)
     else:
-        cred_file = Path(__file__).parent / 'config' / 'prueba-61c40-firebase-adminsdk-fbsvc-996e98f8c5.json'
+        cred_file = Path(__file__).parent / 'config' / '...'
 
     cred_file = cred_file.expanduser().resolve()
     if not cred_file.exists():
@@ -17,7 +17,7 @@ def initialize_firebase():
     cred = credentials.Certificate(str(cred_file))
     try:
         initialize_app(cred, {
-            'databaseURL': 'https://prueba-61c40-default-rtdb.firebaseio.com/'
+            'databaseURL': '...'
         })
     except ValueError:
         # ya inicializada
