@@ -1,102 +1,41 @@
-📚 Proyecto Sistema de Empleados con Firebase
+# Mi proyecto Firebase (Python)
 
-Un sistema de gestión de empleados desarrollado en Python, que utiliza Firebase Firestore para almacenar la información en la nube.
-Basado en Programación Orientada a Objetos (POO), permite registrar, listar, editar y eliminar empleados desde consola.
+Proyecto simple para registrar, ver, editar y eliminar usuarios usando Firebase Realtime Database desde Python.
 
-✨ Características principales
+## Requisitos
+- Python 3.8+ (probado con 3.13)
+- Paquetes:
+  - firebase-admin
 
-Conexión directa con Firebase Firestore
+Instalar dependencias:
+```powershell
+python -m pip install firebase-admin
+```
 
-Estructura modular con clases separadas (Empleado, Administrador, Sistema)
+## Estructura principal
+- src/main.py — entrada del programa (interfaz CLI).
+- src/sistema.py — lógica del menú y orquestación.
+- src/Empleador.py — recoge datos del usuario y crea instancias de Persona.
+- src/models/persona.py — clase Persona.
+- src/firebase_client.py — inicializa Firebase (usa la variable de entorno o `src/config/`).
+- src/services/realtime_db.py — operaciones sobre Realtime Database (add, update, delete, get).
 
-Funciones CRUD básicas (crear, leer, actualizar, eliminar)
+## Uso
 
-Interfaz de texto interactiva por consola
+Opciones del menú:
+- 1: Registrar usuario (se enviará a Firebase).
+- 2: Mostrar usuarios (lista desde Firebase).
+- 3: Editar usuario (buscar por cédula y actualizar).
+- 4: Eliminar usuario (buscar por cédula y borrar).
+- 0: Salir.
 
-Código limpio y escalable, ideal para proyectos académicos o de aprendizaje
+## Comportamiento sobre la cédula (recomendado)
+- Si los registros contienen campo `cedula`, el código puede usar la cédula como key en la BD (facilita editar/eliminar).
+- `add_user` usa `update()` cuando existe cédula (mezcla campos) y `push()` si no existe cédula.
+- `update_user(user_id, data)` actualiza los campos del nodo `users/{user_id}`.
+- `delete_user(user_id)` borra el nodo `users/{user_id}`.
 
-📁 Estructura del proyecto
+## Notas
+- Los objetos Persona se convierten a diccionario antes de enviarlos a Firebase (método `mostrar_info()`).
+- Cambiar la cédula implica mover o crear un nuevo nodo y borrar el antiguo (el flujo de edición ya contempla esto).
 
-proyecto_empleados/
-│
-├── sistema.py             # Control del menú principal
-├── Empleador.py           # Clases Empleado y Administrador
-├── firebase_config.py     # Conexión con Firebase
-├── firebase/
-│   └── firebase-key.json  # Clave privada 
-└── README.md              # Este archivo 😊
-
-
-🏷️ Clases principales
-
-👨‍💼 Empleado
-Representa a cada empleado con sus datos personales:
-
-nombre, apellido, edad, teléfono, cédula y cargo
-Funciones principales:
-
-mostrar_info() → Muestra los datos del empleado
-
-🧾 Administrador
-Gestiona el registro de empleados y la conexión con Firebase.
-Funciones principales:
-
-registrar_empleado() → Crea un nuevo empleado y lo guarda en Firestore
-
-listar_empleados() → Muestra todos los registros
-
-⚙️ Sistema
-Controla el flujo del programa y las opciones del menú.
-Opciones principales:
-
-Registrar empleado
-
-Mostrar empleados
-
-Editar empleado
-
-Eliminar empleado
-
-🔥 Configuración de Firebase
-
-Crea un proyecto en Firebase Console
-
-Genera una clave privada en Configuración del proyecto → Cuentas de servicio
-
-Guarda el archivo .json dentro de la carpeta /firebase/
-
-En firebase_config.py, configura la conexión:
-
-cred = credentials.Certificate("firebase/firebase-key.json")
-firebase_admin.initialize_app(cred)
-
-
-⚙️ Ejecución del proyecto
-
-Instala las dependencias:
-
-pip install firebase-admin
-
-
-Ejecuta el sistema:
-
-python sistema.py
-
-
-Interactúa con el menú desde consola.
-
-💡 Ejemplo de uso
-
---- Bienvenido al Sistema de Empleados ---
-1. Registrar un usuario
-2. Mostrar personas registradas
-3. Editar un usuario
-4. Eliminar un usuario
-0. Salir
-
-¿Qué opción seleccionas? ----> 1
-=== Registro de Empleado ===
-¿Cuál es el nombre del empleado? Juan
-¿Cuál es el apellido del empleado? Pérez
-...
-✅ Empleado registrado y guardado en Firebase correctamente.
