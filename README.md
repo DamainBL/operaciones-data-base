@@ -1,6 +1,6 @@
-# Proyecto Biblioteca en Python con Firebase
+# Proyecto en Python con Firebase
 
-Este proyecto es una aplicación de biblioteca desarrollada en Python que utiliza Firebase como base de datos en tiempo real. Permite registrar, mostrar, editar y eliminar usuarios.
+Este proyecto es una aplicación desarrollada en Python que utiliza Firebase como base de datos en tiempo real. Permite registrar, mostrar, editar y eliminar usuarios.
 
 
 ## Estructura del Proyecto
@@ -16,7 +16,7 @@ El proyecto está estructurado de la siguiente manera:
 
 │ ├── main.py # Punto de entrada de la aplicación
 
-│ ├── sistema.py # Lógica principal del sistema de biblioteca
+│ ├── sistema.py # Lógica principal del sistema 
 
 │ ├── models/ # Definiciones de los modelos de datos
 
@@ -52,12 +52,12 @@ Las dependencias son:
     python src/main.py
     ```
 
-    Esto iniciará la aplicación de la biblioteca, mostrando un menú con opciones para registrar, mostrar, editar y eliminar usuarios.
+    Esto iniciará la aplicación, mostrando un menú con opciones para registrar, mostrar, editar y eliminar usuarios.
 
 
 ## Clases y Funciones Principales
 
-*   [`Sistema`](src/sistema.py): Clase principal que gestiona el sistema de la biblioteca.
+*   [`Sistema`](src/sistema.py): Clase principal que gestiona el sistema 
     *   `__init__`: Inicializa el sistema y la conexión a Firebase.
     *   `mostrar_menu`: Muestra el menú principal.
     *   `Registro`: Permite registrar un nuevo usuario.
@@ -88,4 +88,4 @@ Las dependencias son:
 ## Consideraciones
 
 *   Asegúrate de tener las credenciales de Firebase configuradas correctamente para que la aplicación pueda acceder a la base de datos.
-*   Este proyecto es una base para una aplicación de biblioteca y puede ser extendido con más funcionalidades.
+
