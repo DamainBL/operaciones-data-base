@@ -6,13 +6,3 @@ class Persona:
         self.correo = correo
         self.telefono = telefono
         self.cedula = cedula
-
-    def mostrar_info(self):
-        return {
-            "nombre": self.nombre,
-            "apellido": self.apellido,
-            "edad": self.edad,
-            "correo": self.correo,
-            "telefono": self.telefono,
-            "cedula": self.cedula
-        }
