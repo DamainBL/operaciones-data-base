@@ -69,7 +69,6 @@ Las dependencias son:
     *   `realizar_registro_persona()`:  Realiza el proceso de registro de una persona, solicitando la información y creando un objeto `Persona`.
 *   [`Persona`](src/models/persona.py): Clase que representa a una persona.
     *   `__init__`: Inicializa una instancia de la clase `Persona` con nombre, apellido, edad, correo, teléfono y cédula.
-    *   `mostrar_info()`: Devuelve un diccionario con la información de la persona.
 *   [`firebase_client.py`](src/services/firebase_client.py): Módulo que contiene funciones para interactuar con Firebase.
     *   `initialize_firebase()`: Inicializa la aplicación Firebase.
     *   `add_user(user_data)`: Agrega un usuario a la base de datos.
