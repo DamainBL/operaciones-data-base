@@ -28,6 +28,8 @@ class Administrador:
         )
         persona_dict = persona.__dict__
         return persona_dict
+
+    
     def Registro(self):
         print(f"\nRegistro")
         registrar = Administrador()
@@ -35,14 +37,13 @@ class Administrador:
         add_user(persona)  
 
 
-    def personas_registradas(self):
+    def _personas_registradas(self):
         print("\nPersonas registradas (desde Firebase):")
         usuarios = get_all_users()
         if not usuarios:
             print("No hay usuarios en la base de datos.")
         else:
-            for id, datos in usuarios.items():
-                print(f"- Cedula: {id}")
+            for id,  datos in usuarios.items():
                 print(f"  Nombre: {datos.get('nombre')}")
                 print(f"  Apellido: {datos.get('apellido')}")
                 print(f"  Edad: {datos.get('edad')}")
@@ -50,6 +51,10 @@ class Administrador:
                 print(f"  Teléfono: {datos.get('telefono')}")
                 print(f"  Cédula: {datos.get('cedula')}")
                 print("---------------------------")
+    
+    @property
+    def personas_registradas(self):
+        self._personas_registradas()
 
 
     def editar_usuario(self):
