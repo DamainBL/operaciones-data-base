@@ -1,4 +1,4 @@
-from sistema import Sistema
+from ui.sistema import Sistema
 
 def main():
     sistema = Sistema()
