@@ -8,8 +8,6 @@ Este proyecto es una aplicación de biblioteca desarrollada en Python que utiliz
 El proyecto está estructurado de la siguiente manera:
 
 
-├── .env # Archivo de configuración (opcional)
-
 ├── README.md # Este archivo
 
 ├── requirements.txt # Lista de dependencias del proyecto
@@ -19,10 +17,6 @@ El proyecto está estructurado de la siguiente manera:
 │ ├── main.py # Punto de entrada de la aplicación
 
 │ ├── sistema.py # Lógica principal del sistema de biblioteca
-
-│ ├── config/ # Archivos de configuración
-
-│ │ └── prueba-61c40-firebase-adminsdk-fbsvc-996e98f8c5.json
 
 │ ├── models/ # Definiciones de los modelos de datos
 
