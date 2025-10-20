@@ -24,16 +24,16 @@ class Sistema:
             menu = int(input("¿Qué opción seleccionas? ----> "))
             
             if menu == 1:
-                Empleador.Administrador.Registro()
+                self.admin.Registro()
             
             elif menu == 2:
-                Empleador.Administrador.personas_registradas()
+                self.admin.personas_registradas()
 
             elif menu == 3:
-                Empleador.Administrador.editar_usuario()
+                self.admin.editar_usuario()
             
             elif menu == 4:
-                Empleador.Administrador.eliminar_usuario()
+                self.admin.eliminar_usuario()
 
             elif menu == 0:
                 print("Saliendo del sistema")
