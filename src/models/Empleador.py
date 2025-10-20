@@ -25,9 +25,5 @@ class Administrador:
             telefono=self.respuestas[4],
             cedula=self.respuestas[5]
         )
-        return persona
-
-    def mostrar_info_persona(self):
-        print("\nAquí están tu información:\n")
-        for respuesta in self.respuestas:
-            print(f"Respuesta: {respuesta}\n")
+        persona_dict = persona.__dict__
+        return persona_dict
