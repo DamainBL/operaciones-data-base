@@ -80,10 +80,9 @@ Las dependencias son:
     *   `get_all_users()`: Obtiene todos los usuarios de la base de datos.
     *   `buscar_usuario(user_id)`: Busca un usuario por su ID en la base de datos.
 
-## Modelos
+## Modelo
 
 *   [`Persona`](src/models/persona.py): Representa a una persona con atributos como nombre, apellido, edad, correo, teléfono y cédula.
-*   [`Administrador`](src/models/Empleador.py):  Gestiona el registro de personas.
 
 ## Consideraciones
 
