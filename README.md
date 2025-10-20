@@ -65,10 +65,13 @@ Las dependencias son:
     *   `editar_usuario`: Permite editar la información de un usuario existente.
     *   `eliminar_usuario`: Permite eliminar un usuario.
     *   `menu`:  Muestra el menú y permite la interacción del usuario.
+      
 *   [`Administrador`](src/models/Empleador.py): Clase para la gestión de usuarios.
     *   `realizar_registro_persona()`:  Realiza el proceso de registro de una persona, solicitando la información y creando un objeto `Persona`.
+      
 *   [`Persona`](src/models/persona.py): Clase que representa a una persona.
     *   `__init__`: Inicializa una instancia de la clase `Persona` con nombre, apellido, edad, correo, teléfono y cédula.
+      
 *   [`firebase_client.py`](src/services/firebase_client.py): Módulo que contiene funciones para interactuar con Firebase.
     *   `initialize_firebase()`: Inicializa la aplicación Firebase.
     *   `add_user(user_data)`: Agrega un usuario a la base de datos.
